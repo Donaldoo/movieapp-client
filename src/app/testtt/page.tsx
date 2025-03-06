@@ -1,10 +1,18 @@
-import React from "react";
-import PayPalCheckout from "./Paypal";
+'use client';
 
-function page() {
+import { PayPalButtons } from "@paypal/react-paypal-js";
+
+function Page() {
+  const createOrder = (data: any) => {
+    // Return a promise that resolves with the order ID
+    return Promise.resolve("test-order-id");
+  };
+
   return (
-    <PayPalCheckout clientId='AXy8ds0Z9GVBJjiW_NBj2TlamROnGskRGyTY3dbNQiogS7YsIpCDoatsqP7bCVqxcg2SP1fCcl65VjO3' createOrder={} />
+    <PayPalButtons 
+      createOrder={createOrder}
+    />
   );
 }
 
-export default page;
+export default Page;

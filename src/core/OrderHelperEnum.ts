@@ -8,7 +8,10 @@ export enum OrderStatus {
   Completed = 1,
   Cancelled = 2,
 }
-
+export enum PurchaseType {
+  Price = 0,
+  RentPrice = 1,
+}
 export interface PokPaymentData {
   currencyCode: string;
   products: Product[];

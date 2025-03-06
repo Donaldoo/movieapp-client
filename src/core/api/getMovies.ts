@@ -7,7 +7,8 @@ export type Movie = {
     thumbnailUrl: string,
     videoUrl: string,
     price: number,
-    isPurchased: boolean
+    isPurchased: boolean,
+    rentPrice: number
 }
 
 export default function getMovies(): Promise<Movie[]> {
