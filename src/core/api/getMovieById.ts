@@ -4,6 +4,7 @@ export interface MovieVideo {
     title: string,
     videoUrl: string,
     price: number,
+    rentPrice: number,
     description: string,
     thumbnailUrl: string
 }

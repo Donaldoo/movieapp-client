@@ -14,7 +14,7 @@ export default function MoviesList() {
     queryKey: ["movies"],
     queryFn: () => getMovies(),
   });
-
+  console.log(data)
   if (isLoading)
     return (
       <div className='flex justify-center'>
@@ -37,7 +37,7 @@ export default function MoviesList() {
               ? router.push(`/watch/${movie.id}`)
               : router.push(`/order/${movie.id}`)
           }>
-          <Image
+          <img
             src={movie.thumbnailUrl}
             alt='movie'
             width={500}
@@ -46,7 +46,7 @@ export default function MoviesList() {
           />
           <div className='h-64 relative z-10 w-full transform transition duration-400 hover:scale-110 opacity-0 hover:opacity-100'>
             <div className='bg-gradient-to-b from-transparent via-black/50 to-black z-10 w-full h-full rounded-lg flex items-center justify-center border'>
-              <Image
+              <img
                 src={movie.thumbnailUrl}
                 alt='Movie'
                 width={800}
@@ -54,6 +54,7 @@ export default function MoviesList() {
                 className='absolute w-full h-full -z-10 rounded-lg object-cover'
               />
               <MovieCard
+                rentPrice={movie.rentPrice}
                 title={movie.title}
                 id={movie.id}
                 overview={movie.description}

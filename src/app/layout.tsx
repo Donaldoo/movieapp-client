@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ReactQueryWrapper from "@/components/ReactQueryWrapper";
 import { Toaster } from "@/components/ui/sonner";
+import PayPalProvider from "@/components/PayPalProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,12 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ReactQueryWrapper>
-          {children}
-          <Toaster />
-        </ReactQueryWrapper>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <PayPalProvider>
+          <ReactQueryWrapper>
+            {children}
+            <Toaster />
+          </ReactQueryWrapper>
+        </PayPalProvider>
       </body>
     </html>
   );

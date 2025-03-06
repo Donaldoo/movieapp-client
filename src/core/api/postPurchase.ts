@@ -1,10 +1,11 @@
 import { httpClient } from "../httpClient"
-import { OrderStatus, PaymentMethod } from "../OrderHelperEnum";
+import { OrderStatus, PaymentMethod, PurchaseType } from "../OrderHelperEnum";
 
 export interface OrderRequest {
   id?: string;
   paymentId?: string;
   status: OrderStatus;
+  purchaseType: PurchaseType;
   productId?: string;
   redirectUrl?: string;
   failRedirectUrl?: string;
